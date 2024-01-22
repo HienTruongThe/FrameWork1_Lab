@@ -1,0 +1,26 @@
+.list_title {
+    text-decoration: none;
+}
+
+.list_price {
+    color: red;
+}
+
+.custom_text {
+    color: #fff;
+}
+
+
+.img_product {
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.img_product img {
+    max-height: 100px;
+}
+
+.title_product {
+    font-size: 17px;
+    height: 40px;
+}

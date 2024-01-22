@@ -1,0 +1,39 @@
+<div class="container">
+    <div style="max-width: 500px; margin: auto; padding: 50px 0;">
+        <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+            <div style="display: flex; flex-direction: column;gap: 30px;">
+                <input type="text" class="form-control" placeholder="Họ tên" formControlName="username">
+                <div
+                    *ngIf="!loginform.controls.username?.valid&&(loginform.controls.username?.dirty||loginform.controls.username?.touched)">
+                    <pre>Họ tên không để trống !!!</pre>
+                </div>
+                <input type="text" class="form-control" placeholder="Address" formControlName="address">
+                <div
+                    *ngIf="!loginform.controls.address?.valid&&(loginform.controls.address?.dirty||loginform.controls.address?.touched)">
+                    <pre>Địa chỉ không để trống !!!</pre>
+                </div>
+                <input type="text" class="form-control" placeholder="Số điện thoại" formControlName="phone">
+                <div
+                    *ngIf="!loginform.controls.phone?.valid&&(loginform.controls.phone?.dirty||loginform.controls.phone?.touched)">
+                    <pre>Số điện thoại không để trống !!!</pre>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                <div
+                    *ngIf="!loginform.controls.email?.valid&&(loginform.controls.email?.dirty||loginform.controls.email?.touched)">
+                    <pre>Email không để trống !!!</pre>
+                </div>
+                <input type="cmnd" class="form-control" placeholder="Cmnd" formControlName="cmnd">
+                <div
+                    *ngIf="!loginform.controls.cmnd?.valid&&(loginform.controls.cmnd?.dirty||loginform.controls.cmnd?.touched)">
+                    <pre>CMND phải từ 9 kí tự và phải là số !!!</pre>
+                </div>
+                <button class="btn btn-primary list_all" type="submit">Tất cả đều
+                    Perfect</button>
+                <div *ngIf="infor !== ''">
+                    <h2>Thông tin:</h2>
+                    <p>{{ infor }}</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

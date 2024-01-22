@@ -1,0 +1,26 @@
+<div id="content">
+    <div class="container">
+        <div class="row row-cols-4">
+            <div class="col-3" *ngFor="let product of products">
+                <div class="product-item mb-5">
+                    <div class="product-inner card px-3 py-3">
+                        <a href="" class="img_product">
+                            <img class="img-fluid" src="{{product.thumbnail}}" alt="">
+                        </a>
+                        <h4 class="text-center pt-2 title_product">
+                            <a href="/product-detail/{{product.id}}" class="list_title">
+                                {{product.title}}
+                            </a>
+                        </h4>
+                        <p class="text-center">Giá bán: <span class="list_price">{{product.price}}</span></p>
+                        <button type="button" class="btn btn-primary" *ngIf="product.sales; else notsale">Đừng
+                            mua</button>
+                        <ng-template #notsale>
+                            <button type="button" class="btn btn-danger">Mua ngay</button>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
